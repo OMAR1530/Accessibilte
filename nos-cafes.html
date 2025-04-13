@@ -18,7 +18,7 @@
                 </a>
             </div>
             <div class="auth-buttons">
-                <button class="btn btn-outline" id="loginBtn" aria-label="Se connecter">Connexion</button>
+                <button class="btn btn-outline" id="loginBtn" aria-label="Se connecter" aria-haspopup="true">Connexion</button>
                 <button class="btn" id="logoutBtn" aria-label="Se déconnecter">Déconnexion</button>
             </div>
         </div>
@@ -35,11 +35,12 @@
         <h1 class="text-brown">Nos variétés de café</h1>
         
         <section class="coffee-list" aria-labelledby="coffee-list-title">
+            <h2 id="coffee-list-title" class="visually-hidden">Liste de nos cafés</h2>
             
-            <div class="filters">
+            <div class="filters" role="group" aria-label="Filtres de recherche">
                 <div class="filter-group">
                     <label for="intensity-filter">Intensité :</label>
-                    <select id="intensity-filter" class="filter-select">
+                    <select id="intensity-filter" class="filter-select" aria-label="Filtrer par intensité">
                         <option value="all">Toutes les intensités</option>
                         <option value="1">1 - Très léger</option>
                         <option value="2">2 - Léger</option>
@@ -51,18 +52,18 @@
                 
                 <div class="filter-group">
                     <label for="origin-filter">Origine :</label>
-                    <select id="origin-filter" class="filter-select">
+                    <select id="origin-filter" class="filter-select" aria-label="Filtrer par origine">
                         <option value="all">Toutes les origines</option>
                         <option value="Pérou">Pérou</option>
                     </select>
                 </div>
             </div>
             
-            <div class="coffee-grid" role="list">
+            <div class="coffee-grid" role="list" aria-label="Liste des cafés disponibles">
                 <article class="coffee-item" role="listitem">
                     <div class="coffee-image">
                         <img src="images/cafe-montagne.jpg" 
-                             alt="Café des Montagnes - Grains de café torréfiés" 
+                             alt="Café des Montagnes - Grains de café torréfiés de couleur brun foncé, disposés sur une surface en bois" 
                              width="200" 
                              height="200">
                     </div>
@@ -78,7 +79,8 @@
                                      aria-labelledby="intensity-1" 
                                      aria-valuenow="3" 
                                      aria-valuemin="1" 
-                                     aria-valuemax="5">
+                                     aria-valuemax="5"
+                                     aria-valuetext="Intensité moyenne">
                                     <span class="filled" aria-hidden="true">●</span>
                                     <span class="filled" aria-hidden="true">●</span>
                                     <span class="filled" aria-hidden="true">●</span>
@@ -95,7 +97,7 @@
                             <p class="price text-orange">12,90€</p>
                             <button class="btn" 
                                     onclick="addToCart('cafe-montagne')" 
-                                    aria-label="Ajouter le Café des Montagnes au panier">
+                                    aria-label="Ajouter le Café des Montagnes au panier pour 12,90€">
                                 Ajouter au panier
                             </button>
                         </div>
@@ -105,7 +107,7 @@
                 <article class="coffee-item" role="listitem">
                     <div class="coffee-image">
                         <img src="images/cafe-floral.jpg" 
-                             alt="Café Floral - Grains de café aux notes florales" 
+                             alt="Café Floral - Grains de café aux notes florales, de couleur brun clair, disposés sur une surface en bois" 
                              width="200" 
                              height="200">
                     </div>
@@ -121,7 +123,8 @@
                                      aria-labelledby="intensity-2" 
                                      aria-valuenow="2" 
                                      aria-valuemin="1" 
-                                     aria-valuemax="5">
+                                     aria-valuemax="5"
+                                     aria-valuetext="Intensité légère">
                                     <span class="filled" aria-hidden="true">●</span>
                                     <span class="filled" aria-hidden="true">●</span>
                                     <span class="empty" aria-hidden="true">○</span>
@@ -138,7 +141,7 @@
                             <p class="price text-orange">15,90€</p>
                             <button class="btn" 
                                     onclick="addToCart('cafe-floral')" 
-                                    aria-label="Ajouter le Café Floral au panier">
+                                    aria-label="Ajouter le Café Floral au panier pour 15,90€">
                                 Ajouter au panier
                             </button>
                         </div>
@@ -148,7 +151,7 @@
                 <article class="coffee-item" role="listitem">
                     <div class="coffee-image">
                         <img src="images/cafe-intense.jpg" 
-                             alt="Café Intense - Grains de café robusta torréfiés foncé" 
+                             alt="Café Intense - Grains de café robusta torréfiés foncé, de couleur presque noire, disposés sur une surface en bois" 
                              width="200" 
                              height="200">
                     </div>
@@ -164,7 +167,8 @@
                                      aria-labelledby="intensity-3" 
                                      aria-valuenow="5" 
                                      aria-valuemin="1" 
-                                     aria-valuemax="5">
+                                     aria-valuemax="5"
+                                     aria-valuetext="Intensité très forte">
                                     <span class="filled" aria-hidden="true">●</span>
                                     <span class="filled" aria-hidden="true">●</span>
                                     <span class="filled" aria-hidden="true">●</span>
@@ -181,7 +185,7 @@
                             <p class="price text-orange">13,90€</p>
                             <button class="btn" 
                                     onclick="addToCart('cafe-intense')" 
-                                    aria-label="Ajouter le Café Intense au panier">
+                                    aria-label="Ajouter le Café Intense au panier pour 13,90€">
                                 Ajouter au panier
                             </button>
                         </div>
@@ -191,7 +195,7 @@
                 <article class="coffee-item" role="listitem">
                     <div class="coffee-image">
                         <img src="images/cafe-equilibre.jpg" 
-                             alt="Café Équilibré - Mélange de grains arabica et robusta" 
+                             alt="Café Équilibré - Mélange de grains arabica et robusta, de couleur brun moyen, disposés sur une surface en bois" 
                              width="200" 
                              height="200">
                     </div>
@@ -207,7 +211,8 @@
                                      aria-labelledby="intensity-4" 
                                      aria-valuenow="3" 
                                      aria-valuemin="1" 
-                                     aria-valuemax="5">
+                                     aria-valuemax="5"
+                                     aria-valuetext="Intensité moyenne">
                                     <span class="filled" aria-hidden="true">●</span>
                                     <span class="filled" aria-hidden="true">●</span>
                                     <span class="filled" aria-hidden="true">●</span>
@@ -224,7 +229,7 @@
                             <p class="price text-orange">14,50€</p>
                             <button class="btn" 
                                     onclick="addToCart('cafe-equilibre')" 
-                                    aria-label="Ajouter le Café Équilibré au panier">
+                                    aria-label="Ajouter le Café Équilibré au panier pour 14,50€">
                                 Ajouter au panier
                             </button>
                         </div>
@@ -234,7 +239,7 @@
                 <article class="coffee-item" role="listitem">
                     <div class="coffee-image">
                         <img src="images/cafe-fruité.jpg" 
-                             alt="Café Fruité - Grains d'arabica aux notes fruitées" 
+                             alt="Café Fruité - Grains d'arabica aux notes fruitées, de couleur brun clair, disposés sur une surface en bois" 
                              width="200" 
                              height="200">
                     </div>
@@ -250,7 +255,8 @@
                                      aria-labelledby="intensity-5" 
                                      aria-valuenow="2" 
                                      aria-valuemin="1" 
-                                     aria-valuemax="5">
+                                     aria-valuemax="5"
+                                     aria-valuetext="Intensité légère">
                                     <span class="filled" aria-hidden="true">●</span>
                                     <span class="filled" aria-hidden="true">●</span>
                                     <span class="empty" aria-hidden="true">○</span>
@@ -266,51 +272,8 @@
                         <div class="price-info">
                             <p class="price text-orange">16,90€</p>
                             <button class="btn" 
-                                    onclick="addToCart('cafe-fruite')" 
-                                    aria-label="Ajouter le Café Fruité au panier">
-                                Ajouter au panier
-                            </button>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="coffee-item" role="listitem">
-                    <div class="coffee-image">
-                        <img src="images/cafe-tradition.jpg" 
-                             alt="Café Tradition - Mélange traditionnel de grains de café" 
-                             width="200" 
-                             height="200">
-                    </div>
-                    <div class="coffee-details">
-                        <h3 class="text-brown">Café Tradition</h3>
-                        <p>Notre mélange traditionnel aux notes de chocolat et de céréales torréfiées. Un grand classique.</p>
-                        
-                        <div class="coffee-properties">
-                            <div class="property">
-                                <span id="intensity-6">Intensité:</span>
-                                <div class="intensity-level" 
-                                     role="meter" 
-                                     aria-labelledby="intensity-6" 
-                                     aria-valuenow="4" 
-                                     aria-valuemin="1" 
-                                     aria-valuemax="5">
-                                    <span class="filled" aria-hidden="true">●</span>
-                                    <span class="filled" aria-hidden="true">●</span>
-                                    <span class="filled" aria-hidden="true">●</span>
-                                    <span class="filled" aria-hidden="true">●</span>
-                                    <span class="empty" aria-hidden="true">○</span>
-                                </div>
-                            </div>
-                            <div class="property">
-                                <span>Origine: Pérou</span>
-                            </div>
-                        </div>
-                        
-                        <div class="price-info">
-                            <p class="price text-orange">13,50€</p>
-                            <button class="btn" 
-                                    onclick="addToCart('cafe-tradition')" 
-                                    aria-label="Ajouter le Café Tradition au panier">
+                                    onclick="addToCart('cafe-fruité')" 
+                                    aria-label="Ajouter le Café Fruité au panier pour 16,90€">
                                 Ajouter au panier
                             </button>
                         </div>
@@ -335,6 +298,15 @@
                     <li><a href="nos-cafes.html" class="text-beige">Découvrir nos cafés</a></li>
                 </ul>
             </div>
+            <div class="footer-section">
+                <h2>Plan du site</h2>
+                <ul>
+                    <li><a href="index.html" class="text-beige">Accueil</a></li>
+                    <li><a href="nos-cafes.html" class="text-beige">Nos cafés</a></li>
+                    <li><a href="#" class="text-beige">Notre histoire</a></li>
+                    <li><a href="#" class="text-beige">Nos engagements</a></li>
+                </ul>
+            </div>
         </div>
         <div class="copyright">
             <p>&copy; 2025 Café Pachamama - Tous droits réservés</p>
@@ -343,9 +315,22 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
+            const loginBtn = document.getElementById('loginBtn');
+            const logoutBtn = document.getElementById('logoutBtn');
             const intensityFilter = document.getElementById('intensity-filter');
             const originFilter = document.getElementById('origin-filter');
             const coffeeItems = document.querySelectorAll('.coffee-item');
+
+            // Gestion du bouton de connexion
+            loginBtn.addEventListener('click', function() {
+                window.location.href = 'connexion.html';
+            });
+
+            // Gestion du bouton de déconnexion
+            logoutBtn.addEventListener('click', function() {
+                // Ici, vous pouvez ajouter la logique de déconnexion
+                console.log('Déconnexion');
+            });
 
             function filterCoffees() {
                 const selectedIntensity = intensityFilter.value;
