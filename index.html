@@ -3,13 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Café Pachamama - Découvrez nos cafés éthiques et responsables du Pérou">
-    <title>Accueil - Café Pachamama</title>
+    <meta name="description" content="Découvrez Café Pachamama, votre torréfacteur artisanal de café bio et équitable">
+    <title>Café Pachamama - Torréfacteur Artisanal</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Lien d'évitement pour les utilisateurs de clavier -->
-    <a href="#main-content" class="skip-link">Aller au contenu principal</a>
+    <a href="#main-content" class="skip-link" aria-label="Passer la navigation et aller directement au contenu principal">Aller au contenu principal</a>
 
     <header role="banner">
         <div class="header-container">
@@ -18,90 +17,53 @@
                     <img src="images/logo.png" alt="Logo Café Pachamama - Un grain de café entouré de feuilles" width="100" height="100">
                 </a>
             </div>
-            <div class="auth-buttons">
-                <button class="btn btn-outline" id="loginBtn" aria-label="Se connecter" aria-haspopup="true">Connexion</button>
-                <button class="btn" id="logoutBtn" aria-label="Se déconnecter">Déconnexion</button>
-            </div>
+            <nav role="navigation" aria-label="Navigation principale">
+                <ul>
+                    <li><a href="index.html" class="nav-link" aria-current="page">Accueil</a></li>
+                    <li><a href="nos-cafes.html" class="nav-link">Nos cafés</a></li>
+                    <li><a href="connexion.html" class="nav-link">Connexion</a></li>
+                    <li><a href="inscription.html" class="nav-link">Inscription</a></li>
+                </ul>
+            </nav>
         </div>
     </header>
 
-    <nav role="navigation" aria-label="Navigation principale">
-        <ul>
-            <li><a href="index.html" class="nav-link" aria-current="page">Accueil</a></li>
-            <li><a href="nos-cafes.html" class="nav-link">Nos cafés</a></li>
-        </ul>
-    </nav>
-
-    <main id="main-content" role="main">
-        <h1 class="text-brown">Découvrez Café Pachamama</h1>
-        
-        <section class="features" aria-label="Nos caractéristiques principales">
-            <div class="feature-grid">
-                <article class="feature-item" aria-labelledby="feature1-title">
-                    <h2 id="feature1-title" class="text-brown">Découvrez Café Pachamama</h2>
-                    <p>Café Pachamama vous propose un café responsable, issu des montagnes péruviennes.</p>
-                </article>
-
-                <article class="feature-item" aria-labelledby="feature2-title">
-                    <h2 id="feature2-title" class="text-brown">Un engagement éthique</h2>
-                    <p>Nous soutenons les producteurs locaux grâce à une rémunération équitable, tout en préservant les écosystèmes.</p>
-                </article>
-
-                <article class="feature-item" aria-labelledby="feature3-title">
-                    <h2 id="feature3-title" class="text-brown">Une expérience savoureuse</h2>
-                    <p>Nos cafés 100 % arabica offrent des arômes uniques : fruits tropicaux, chocolat et une touche florale. <span aria-hidden="true">🌱☕</span><span class="visually-hidden">Café bio</span></p>
-                </article>
+    <main id="main-content" role="main" tabindex="-1">
+        <section class="hero" aria-labelledby="hero-title">
+            <div class="hero-content">
+                <h1 id="hero-title" class="text-brown">Bienvenue chez Café Pachamama</h1>
+                <p class="text-beige">Découvrez notre sélection de cafés bio et équitables, torréfiés avec passion</p>
+                <a href="nos-cafes.html" class="btn">Découvrir nos cafés</a>
             </div>
         </section>
-        
-        <section class="coffee-showcase" aria-labelledby="showcase-title">
-            <h2 id="showcase-title" class="text-brown">Nos cafés d'exception</h2>
-            <div class="coffee-images" role="group" aria-label="Galerie de photos de nos cafés">
-                <figure>
-                    <img src="images/coffee-beans.jpg" 
-                         alt="Grains de café fraîchement torréfiés, de couleur brun foncé, disposés sur une surface en bois" 
-                         width="300" 
-                         height="200">
-                    <figcaption>Notre sélection de grains torréfiés avec soin</figcaption>
-                </figure>
-                <figure>
-                    <img src="images/coffee-plantation.jpg" 
-                         alt="Vue panoramique sur une plantation de café dans les montagnes péruviennes, avec des rangées de caféiers sur les pentes" 
-                         width="300" 
-                         height="200">
-                    <figcaption>Nos plantations en altitude au Pérou</figcaption>
-                </figure>
+
+        <section class="features" aria-labelledby="features-title">
+            <h2 id="features-title" class="text-brown">Pourquoi choisir Café Pachamama ?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <img src="images/coffee-beans.jpg" alt="Grains de café frais" width="300" height="200">
+                    <h3>Qualité Premium</h3>
+                    <p>Des grains de café sélectionnés avec soin pour une expérience gustative exceptionnelle</p>
+                </div>
+                <div class="feature-card">
+                    <img src="images/roasting.jpg" alt="Torréfaction artisanale" width="300" height="200">
+                    <h3>Torréfaction Artisanale</h3>
+                    <p>Une torréfaction traditionnelle qui respecte l'authenticité de chaque origine</p>
+                </div>
+                <div class="feature-card">
+                    <img src="images/farmer.jpg" alt="Producteur de café" width="300" height="200">
+                    <h3>Commerce Équitable</h3>
+                    <p>Un partenariat direct avec les producteurs pour une rémunération juste</p>
+                </div>
             </div>
         </section>
-        
-        <section class="contact-form" aria-labelledby="contact-title">
-            <h2 id="contact-title" class="text-brown">Contactez-nous</h2>
-            <form action="#" method="post" class="contact-form" aria-label="Formulaire de contact">
-                <div class="form-group">
-                    <label for="name">Nom complet <span class="required">*</span></label>
-                    <input type="text" id="name" name="name" required aria-required="true" autocomplete="name" aria-describedby="name-help">
-                    <span id="name-help" class="visually-hidden">Veuillez entrer votre nom complet</span>
-                </div>
-                
-                <div class="form-group">
-                    <label for="email">Email <span class="required">*</span></label>
-                    <input type="email" id="email" name="email" required aria-required="true" autocomplete="email" aria-describedby="email-help">
-                    <span id="email-help" class="visually-hidden">Veuillez entrer une adresse email valide</span>
-                </div>
-                
-                <div class="form-group">
-                    <label for="subject">Sujet</label>
-                    <input type="text" id="subject" name="subject" autocomplete="off" aria-describedby="subject-help">
-                    <span id="subject-help" class="visually-hidden">Veuillez entrer le sujet de votre message</span>
-                </div>
-                
-                <div class="form-group">
-                    <label for="message">Message <span class="required">*</span></label>
-                    <textarea id="message" name="message" required aria-required="true" aria-describedby="message-help"></textarea>
-                    <span id="message-help" class="visually-hidden">Veuillez entrer votre message</span>
-                </div>
-                
-                <button type="submit" class="btn">Envoyer</button>
+
+        <section class="newsletter" aria-labelledby="newsletter-title">
+            <h2 id="newsletter-title" class="text-brown">Restez informés</h2>
+            <p>Inscrivez-vous à notre newsletter pour recevoir nos dernières actualités et offres</p>
+            <form class="newsletter-form" aria-label="Formulaire d'inscription à la newsletter">
+                <input type="email" placeholder="Votre email" required aria-required="true">
+                <button type="submit" class="btn">S'inscrire</button>
             </form>
         </section>
     </main>
@@ -135,23 +97,5 @@
             <p>&copy; 2025 Café Pachamama - Tous droits réservés</p>
         </div>
     </footer>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const loginBtn = document.getElementById('loginBtn');
-            const logoutBtn = document.getElementById('logoutBtn');
-
-            // Gestion du bouton de connexion
-            loginBtn.addEventListener('click', function() {
-                window.location.href = 'connexion.html';
-            });
-
-            // Gestion du bouton de déconnexion
-            logoutBtn.addEventListener('click', function() {
-                // Ici, vous pouvez ajouter la logique de déconnexion
-                console.log('Déconnexion');
-            });
-        });
-    </script>
 </body>
 </html>

@@ -3,280 +3,95 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Découvrez notre sélection de cafés éthiques et responsables du Pérou">
+    <meta name="description" content="Découvrez notre sélection de cafés bio et équitables">
     <title>Nos Cafés - Café Pachamama</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <a href="#main-content" class="skip-link">Aller au contenu principal</a>
+    <a href="#main-content" class="skip-link" aria-label="Passer la navigation et aller directement au contenu principal">Aller au contenu principal</a>
 
     <header role="banner">
         <div class="header-container">
             <div class="logo">
-                <a href="index.html" aria-label="Retour à l'accueil">
+                <a href="index.html" aria-label="Retour à la page d'accueil de Café Pachamama">
                     <img src="images/logo.png" alt="Logo Café Pachamama - Un grain de café entouré de feuilles" width="100" height="100">
                 </a>
             </div>
-            <div class="auth-buttons">
-                <button class="btn btn-outline" id="loginBtn" aria-label="Se connecter" aria-haspopup="true">Connexion</button>
-                <button class="btn" id="logoutBtn" aria-label="Se déconnecter">Déconnexion</button>
-            </div>
+            <nav role="navigation" aria-label="Navigation principale">
+                <ul>
+                    <li><a href="index.html" class="nav-link">Accueil</a></li>
+                    <li><a href="nos-cafes.html" class="nav-link" aria-current="page">Nos cafés</a></li>
+                    <li><a href="connexion.html" class="nav-link">Connexion</a></li>
+                    <li><a href="inscription.html" class="nav-link">Inscription</a></li>
+                </ul>
+            </nav>
         </div>
     </header>
 
-    <nav role="navigation" aria-label="Navigation principale">
-        <ul>
-            <li><a href="index.html" class="nav-link">Accueil</a></li>
-            <li><a href="nos-cafes.html" class="nav-link" aria-current="page">Nos cafés</a></li>
-        </ul>
-    </nav>
+    <main id="main-content" role="main" tabindex="-1">
+        <section class="coffee-intro" aria-labelledby="coffee-intro-title">
+            <h1 id="coffee-intro-title" class="text-brown">Nos Cafés d'Exception</h1>
+            <p>Découvrez notre sélection de cafés bio et équitables, torréfiés avec passion</p>
+        </section>
 
-    <main id="main-content" role="main">
-        <h1 class="text-brown">Nos variétés de café</h1>
-        
-        <section class="coffee-list" aria-labelledby="coffee-list-title">
-            <h2 id="coffee-list-title" class="visually-hidden">Liste de nos cafés</h2>
-            
-            <div class="filters" role="group" aria-label="Filtres de recherche">
+        <section class="coffee-filters" aria-labelledby="filters-title">
+            <h2 id="filters-title" class="visually-hidden">Filtres de recherche</h2>
+            <form class="filter-form" aria-label="Filtres de recherche de cafés">
                 <div class="filter-group">
-                    <label for="intensity-filter">Intensité :</label>
-                    <select id="intensity-filter" class="filter-select" aria-label="Filtrer par intensité">
-                        <option value="all">Toutes les intensités</option>
-                        <option value="1">1 - Très léger</option>
-                        <option value="2">2 - Léger</option>
-                        <option value="3">3 - Moyen</option>
-                        <option value="4">4 - Intense</option>
-                        <option value="5">5 - Très intense</option>
+                    <label for="origin">Origine</label>
+                    <select id="origin" name="origin">
+                        <option value="">Toutes les origines</option>
+                        <option value="peru">Pérou</option>
+                        <option value="colombia">Colombie</option>
+                        <option value="ethiopia">Éthiopie</option>
                     </select>
                 </div>
-                
                 <div class="filter-group">
-                    <label for="origin-filter">Origine :</label>
-                    <select id="origin-filter" class="filter-select" aria-label="Filtrer par origine">
-                        <option value="all">Toutes les origines</option>
-                        <option value="Pérou">Pérou</option>
+                    <label for="roast">Torréfaction</label>
+                    <select id="roast" name="roast">
+                        <option value="">Tous les degrés</option>
+                        <option value="light">Légère</option>
+                        <option value="medium">Moyenne</option>
+                        <option value="dark">Foncée</option>
                     </select>
                 </div>
-            </div>
-            
-            <div class="coffee-grid" role="list" aria-label="Liste des cafés disponibles">
-                <article class="coffee-item" role="listitem">
-                    <div class="coffee-image">
-                        <img src="images/cafe-montagne.jpg" 
-                             alt="Café des Montagnes - Grains de café torréfiés de couleur brun foncé, disposés sur une surface en bois" 
-                             width="200" 
-                             height="200">
-                    </div>
-                    <div class="coffee-details">
-                        <h3 class="text-brown">Café des Montagnes</h3>
-                        <p>Notre arabica d'altitude cultivé à plus de 1800m. Notes de caramel et fruits rouges.</p>
-                        
-                        <div class="coffee-properties">
-                            <div class="property">
-                                <span id="intensity-1">Intensité:</span>
-                                <div class="intensity-level" 
-                                     role="meter" 
-                                     aria-labelledby="intensity-1" 
-                                     aria-valuenow="3" 
-                                     aria-valuemin="1" 
-                                     aria-valuemax="5"
-                                     aria-valuetext="Intensité moyenne">
-                                    <span class="filled" aria-hidden="true">●</span>
-                                    <span class="filled" aria-hidden="true">●</span>
-                                    <span class="filled" aria-hidden="true">●</span>
-                                    <span class="empty" aria-hidden="true">○</span>
-                                    <span class="empty" aria-hidden="true">○</span>
-                                </div>
-                            </div>
-                            <div class="property">
-                                <span>Origine: Pérou</span>
-                            </div>
-                        </div>
-                        
-                        <div class="price-info">
-                            <p class="price text-orange">12,90€</p>
-                            <button class="btn" 
-                                    onclick="addToCart('cafe-montagne')" 
-                                    aria-label="Ajouter le Café des Montagnes au panier pour 12,90€">
-                                Ajouter au panier
-                            </button>
-                        </div>
+                <button type="submit" class="btn">Filtrer</button>
+            </form>
+        </section>
+
+        <section class="coffee-grid" aria-labelledby="coffee-grid-title">
+            <h2 id="coffee-grid-title" class="visually-hidden">Notre sélection de cafés</h2>
+            <div class="coffee-cards">
+                <article class="coffee-card" aria-labelledby="coffee1-title">
+                    <img src="images/coffee1.jpg" alt="Café Pérou Bio" width="300" height="200">
+                    <div class="coffee-info">
+                        <h3 id="coffee1-title">Pérou Bio</h3>
+                        <p class="coffee-origin">Origine : Pérou</p>
+                        <p class="coffee-roast">Torréfaction : Moyenne</p>
+                        <p class="coffee-price">12,90 €</p>
+                        <button class="btn" aria-label="Ajouter Pérou Bio au panier">Ajouter au panier</button>
                     </div>
                 </article>
 
-                <article class="coffee-item" role="listitem">
-                    <div class="coffee-image">
-                        <img src="images/cafe-floral.jpg" 
-                             alt="Café Floral - Grains de café aux notes florales, de couleur brun clair, disposés sur une surface en bois" 
-                             width="200" 
-                             height="200">
-                    </div>
-                    <div class="coffee-details">
-                        <h3 class="text-brown">Café Floral</h3>
-                        <p>Un café aux arômes délicats et floraux avec des notes de jasmin et d'agrumes.</p>
-                        
-                        <div class="coffee-properties">
-                            <div class="property">
-                                <span id="intensity-2">Intensité:</span>
-                                <div class="intensity-level" 
-                                     role="meter" 
-                                     aria-labelledby="intensity-2" 
-                                     aria-valuenow="2" 
-                                     aria-valuemin="1" 
-                                     aria-valuemax="5"
-                                     aria-valuetext="Intensité légère">
-                                    <span class="filled" aria-hidden="true">●</span>
-                                    <span class="filled" aria-hidden="true">●</span>
-                                    <span class="empty" aria-hidden="true">○</span>
-                                    <span class="empty" aria-hidden="true">○</span>
-                                    <span class="empty" aria-hidden="true">○</span>
-                                </div>
-                            </div>
-                            <div class="property">
-                                <span>Origine: Pérou</span>
-                            </div>
-                        </div>
-                        
-                        <div class="price-info">
-                            <p class="price text-orange">15,90€</p>
-                            <button class="btn" 
-                                    onclick="addToCart('cafe-floral')" 
-                                    aria-label="Ajouter le Café Floral au panier pour 15,90€">
-                                Ajouter au panier
-                            </button>
-                        </div>
+                <article class="coffee-card" aria-labelledby="coffee2-title">
+                    <img src="images/coffee2.jpg" alt="Café Colombie Équitable" width="300" height="200">
+                    <div class="coffee-info">
+                        <h3 id="coffee2-title">Colombie Équitable</h3>
+                        <p class="coffee-origin">Origine : Colombie</p>
+                        <p class="coffee-roast">Torréfaction : Légère</p>
+                        <p class="coffee-price">14,90 €</p>
+                        <button class="btn" aria-label="Ajouter Colombie Équitable au panier">Ajouter au panier</button>
                     </div>
                 </article>
 
-                <article class="coffee-item" role="listitem">
-                    <div class="coffee-image">
-                        <img src="images/cafe-intense.jpg" 
-                             alt="Café Intense - Grains de café robusta torréfiés foncé, de couleur presque noire, disposés sur une surface en bois" 
-                             width="200" 
-                             height="200">
-                    </div>
-                    <div class="coffee-details">
-                        <h3 class="text-brown">Café Intense</h3>
-                        <p>Un robusta puissant aux notes de chocolat noir et d'épices. Parfait pour un réveil énergique.</p>
-                        
-                        <div class="coffee-properties">
-                            <div class="property">
-                                <span id="intensity-3">Intensité:</span>
-                                <div class="intensity-level" 
-                                     role="meter" 
-                                     aria-labelledby="intensity-3" 
-                                     aria-valuenow="5" 
-                                     aria-valuemin="1" 
-                                     aria-valuemax="5"
-                                     aria-valuetext="Intensité très forte">
-                                    <span class="filled" aria-hidden="true">●</span>
-                                    <span class="filled" aria-hidden="true">●</span>
-                                    <span class="filled" aria-hidden="true">●</span>
-                                    <span class="filled" aria-hidden="true">●</span>
-                                    <span class="filled" aria-hidden="true">●</span>
-                                </div>
-                            </div>
-                            <div class="property">
-                                <span>Origine: Pérou</span>
-                            </div>
-                        </div>
-                        
-                        <div class="price-info">
-                            <p class="price text-orange">13,90€</p>
-                            <button class="btn" 
-                                    onclick="addToCart('cafe-intense')" 
-                                    aria-label="Ajouter le Café Intense au panier pour 13,90€">
-                                Ajouter au panier
-                            </button>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="coffee-item" role="listitem">
-                    <div class="coffee-image">
-                        <img src="images/cafe-equilibre.jpg" 
-                             alt="Café Équilibré - Mélange de grains arabica et robusta, de couleur brun moyen, disposés sur une surface en bois" 
-                             width="200" 
-                             height="200">
-                    </div>
-                    <div class="coffee-details">
-                        <h3 class="text-brown">Café Équilibré</h3>
-                        <p>Un mélange harmonieux d'arabica et robusta offrant des notes de noisette et de caramel.</p>
-                        
-                        <div class="coffee-properties">
-                            <div class="property">
-                                <span id="intensity-4">Intensité:</span>
-                                <div class="intensity-level" 
-                                     role="meter" 
-                                     aria-labelledby="intensity-4" 
-                                     aria-valuenow="3" 
-                                     aria-valuemin="1" 
-                                     aria-valuemax="5"
-                                     aria-valuetext="Intensité moyenne">
-                                    <span class="filled" aria-hidden="true">●</span>
-                                    <span class="filled" aria-hidden="true">●</span>
-                                    <span class="filled" aria-hidden="true">●</span>
-                                    <span class="empty" aria-hidden="true">○</span>
-                                    <span class="empty" aria-hidden="true">○</span>
-                                </div>
-                            </div>
-                            <div class="property">
-                                <span>Origine: Pérou</span>
-                            </div>
-                        </div>
-                        
-                        <div class="price-info">
-                            <p class="price text-orange">14,50€</p>
-                            <button class="btn" 
-                                    onclick="addToCart('cafe-equilibre')" 
-                                    aria-label="Ajouter le Café Équilibré au panier pour 14,50€">
-                                Ajouter au panier
-                            </button>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="coffee-item" role="listitem">
-                    <div class="coffee-image">
-                        <img src="images/cafe-fruité.jpg" 
-                             alt="Café Fruité - Grains d'arabica aux notes fruitées, de couleur brun clair, disposés sur une surface en bois" 
-                             width="200" 
-                             height="200">
-                    </div>
-                    <div class="coffee-details">
-                        <h3 class="text-brown">Café Fruité</h3>
-                        <p>Un arabica aux notes vives de fruits rouges et d'agrumes. Une expérience rafraîchissante.</p>
-                        
-                        <div class="coffee-properties">
-                            <div class="property">
-                                <span id="intensity-5">Intensité:</span>
-                                <div class="intensity-level" 
-                                     role="meter" 
-                                     aria-labelledby="intensity-5" 
-                                     aria-valuenow="2" 
-                                     aria-valuemin="1" 
-                                     aria-valuemax="5"
-                                     aria-valuetext="Intensité légère">
-                                    <span class="filled" aria-hidden="true">●</span>
-                                    <span class="filled" aria-hidden="true">●</span>
-                                    <span class="empty" aria-hidden="true">○</span>
-                                    <span class="empty" aria-hidden="true">○</span>
-                                    <span class="empty" aria-hidden="true">○</span>
-                                </div>
-                            </div>
-                            <div class="property">
-                                <span>Origine: Pérou</span>
-                            </div>
-                        </div>
-                        
-                        <div class="price-info">
-                            <p class="price text-orange">16,90€</p>
-                            <button class="btn" 
-                                    onclick="addToCart('cafe-fruité')" 
-                                    aria-label="Ajouter le Café Fruité au panier pour 16,90€">
-                                Ajouter au panier
-                            </button>
-                        </div>
+                <article class="coffee-card" aria-labelledby="coffee3-title">
+                    <img src="images/coffee3.jpg" alt="Café Éthiopie Bio" width="300" height="200">
+                    <div class="coffee-info">
+                        <h3 id="coffee3-title">Éthiopie Bio</h3>
+                        <p class="coffee-origin">Origine : Éthiopie</p>
+                        <p class="coffee-roast">Torréfaction : Foncée</p>
+                        <p class="coffee-price">15,90 €</p>
+                        <button class="btn" aria-label="Ajouter Éthiopie Bio au panier">Ajouter au panier</button>
                     </div>
                 </article>
             </div>
@@ -312,48 +127,5 @@
             <p>&copy; 2025 Café Pachamama - Tous droits réservés</p>
         </div>
     </footer>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const loginBtn = document.getElementById('loginBtn');
-            const logoutBtn = document.getElementById('logoutBtn');
-            const intensityFilter = document.getElementById('intensity-filter');
-            const originFilter = document.getElementById('origin-filter');
-            const coffeeItems = document.querySelectorAll('.coffee-item');
-
-            // Gestion du bouton de connexion
-            loginBtn.addEventListener('click', function() {
-                window.location.href = 'connexion.html';
-            });
-
-            // Gestion du bouton de déconnexion
-            logoutBtn.addEventListener('click', function() {
-                // Ici, vous pouvez ajouter la logique de déconnexion
-                console.log('Déconnexion');
-            });
-
-            function filterCoffees() {
-                const selectedIntensity = intensityFilter.value;
-                const selectedOrigin = originFilter.value;
-
-                coffeeItems.forEach(item => {
-                    const intensity = item.querySelector('.intensity-level').getAttribute('aria-valuenow');
-                    const origin = item.querySelector('.property:last-child span').textContent.split(': ')[1];
-                    
-                    const intensityMatch = selectedIntensity === 'all' || intensity === selectedIntensity;
-                    const originMatch = selectedOrigin === 'all' || origin === selectedOrigin;
-
-                    if (intensityMatch && originMatch) {
-                        item.style.display = 'flex';
-                    } else {
-                        item.style.display = 'none';
-                    }
-                });
-            }
-
-            intensityFilter.addEventListener('change', filterCoffees);
-            originFilter.addEventListener('change', filterCoffees);
-        });
-    </script>
 </body>
 </html>
