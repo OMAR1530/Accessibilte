@@ -248,16 +248,15 @@ function clearErrors() {
  * @param {string} type - Le type de message ('success' ou 'error')
  */
 function showConfirmation(message, type) {
-    const confirmationElement = document.createElement('div');
-    confirmationElement.className = `confirmation-message ${type}`;
-    confirmationElement.textContent = message;
-    confirmationElement.setAttribute('role', 'alert');
-    
-    document.body.appendChild(confirmationElement);
-    
-    setTimeout(() => {
-        confirmationElement.remove();
-    }, 5000);
+    const confirmationElement = document.getElementById('form-confirmation');
+    if (confirmationElement) {
+        confirmationElement.textContent = message;
+        confirmationElement.className = `form-confirmation ${type}`;
+        confirmationElement.style.display = 'block';
+        
+        // Scroll jusqu'au message de confirmation
+        confirmationElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
 }
 
 /**
